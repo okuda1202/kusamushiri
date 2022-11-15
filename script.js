@@ -251,7 +251,7 @@ window.onload = function () {
 		tweetBtn.ontouchend = function () {				//S_Tweetボタンをタッチした（タッチして離した）時にこの中の内容を実行する
 			//ツイートＡＰＩに送信
 			//結果ツイート時にURLを貼るため、このゲームのURLをここに記入してURLがツイート画面に反映されるようにエンコードする
-			const url = encodeURI("https://hothukurou.com");
+			const url = encodeURI("https://okuda1202.github.io/kusamushiri/");
 			window.open("http://twitter.com/intent/tweet?text=頑張って" + result + "草入手した&hashtags=ahoge&url=" + url); //ハッシュタグにahogeタグ付くようにした。
 		};
 
