@@ -27,8 +27,13 @@ window.onload = function () {
 	const kuroyuri = "kuroyuri.png";
 	game.preload([kuroyuri]);
 
+	//リザルト画面１
 	const sad = "cried.jpg";
 	game.preload([sad]);
+
+	//リザルト画面2
+	const usagi = "over100.jpg";						//game.htmlからの相対パス
+	game.preload([usagi]);					//データを読み込んでおく		
 
 	//リトライボタン
 	const retryImgUrl = "retry.png";						//game.htmlからの相対パス
@@ -228,7 +233,18 @@ window.onload = function () {
 		sad_img.scale(0.8, 0.8);
 		sad_img.moveTo(70, 80);						//リトライボタンの位置
 		sad_img.image = game.assets[sad];			//読み込む画像の相対パスを指定。　事前にgame.preloadしてないと呼び出せない
-		endScene.addChild(sad_img);					//endSceneにこのリトライボタン画像を貼り付ける
+		//endScene.addChild(sad_img);					
+		//リザルト2
+		const usage_img = new Sprite(1016, 510);
+		usage_img.scale(0.4, 0.4);
+		usage_img.moveTo(-310, -20);						//リトライボタンの位置
+		usage_img.image = game.assets[usagi];			//読み込む画像の相対パスを指定。　事前にgame.preloadしてないと呼び出せない
+		if(result>=100){
+		endScene.addChild(usage_img);
+		}
+		if(result < 100){
+			endScene.addChild(sad_img);
+		}
 
 		//リトライボタン
 		const retryBtn = new Sprite(120, 60);				//画像サイズをここに書く。使う予定の画像サイズはプロパティで見ておくこと
