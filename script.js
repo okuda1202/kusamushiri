@@ -242,7 +242,7 @@ window.onload = function () {
 		if(result>=100){
 		endScene.addChild(usage_img);
 		}
-		if(result < 100){
+		else if(result < 100){
 			endScene.addChild(sad_img);
 		}
 
